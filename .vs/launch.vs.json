@@ -1,0 +1,24 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "program.exe (program\\program.exe)",
+      "name": "program.exe (program\\program.exe)",
+      "args": [
+        "-c 10 --min 1 --max 100"
+      ]
+    },
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "program.exe (Install)",
+      "name": "program.exe (Install)",
+      "args": [
+        "-c 10 --min 1 --max 100"
+      ]
+    }
+  ]
+}
