@@ -1,0 +1,8 @@
+add_executable(program main.cpp)
+
+target_link_libraries(program PRIVATE random)
+find_package(CLI11 CONFIG REQUIRED)
+target_link_libraries(program PRIVATE CLI11::CLI11)
+
+install(TARGETS program
+        RUNTIME DESTINATION bin)
