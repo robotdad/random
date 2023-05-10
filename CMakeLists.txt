@@ -14,7 +14,6 @@ project ("random")
 # Include sub-projects.
 add_subdirectory ("library")
 add_subdirectory ("program")
-add_subdirectory ("tests")
-
+enable_testing()
 include(CTest)
-add_test(NAME "Interface1" COMMAND tests)
+add_subdirectory ("tests")

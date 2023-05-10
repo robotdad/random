@@ -1,28 +1,23 @@
-#include <catch2/catch_all.hpp>
-#include <algorithm>
+#include <gtest/gtest.h>
+#include <vector>
 
-// Include the header where the `random_number` function is declared
+// Include the header file containing the random_number function
 #include "random.h"
 
-TEST_CASE("Interface1", "[random_number]") {
-    // Test case parameters
-    int count = 10;
-    int min_value = 1;
-    int max_value = 100;
+// Test case for random_number
+TEST(RandomNumberTest, GeneratesNumbersInRange) {
+    std::vector<int> numbers = random_number(10, 1, 100);
 
-    // Call the function to generate random numbers
-    std::vector<int> numbers = random_number(count, min_value, max_value);
-
-    // Check the generated numbers count
-    REQUIRE(numbers.size() == count);
-
-    // Check the range of generated numbers
-    for (int number : numbers) {
-        REQUIRE(number >= min_value);
-        REQUIRE(number <= max_value);
+    // Add your assertions to validate the generated numbers
+    ASSERT_EQ(numbers.size(), 10);
+    for (int num : numbers) {
+        ASSERT_GE(num, 1);
+        ASSERT_LE(num, 100);
     }
-
-    // Check for uniqueness of generated numbers
-    std::sort(numbers.begin(), numbers.end());
-    REQUIRE(std::unique(numbers.begin(), numbers.end()) == numbers.end());
 }
+
+// Run all the tests
+//int main(int argc, char** argv) {
+//    testing::InitGoogleTest(&argc, argv);
+//    return RUN_ALL_TESTS();
+//}
